@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+</head>
+
+<body>
+    <style>
+        :root {
+            --vh: 100vh / 100;
+        }
+
+        * {
+            padding: 0%;
+            margin: 0%;
+            font-family: figtree;
+            color: #353635;
+        }
+
+        body {
+            background-color: #fafafa;
+            display: grid;
+            grid-template-rows: 50px 1fr 60px;
+            min-height: 100vh;
+        }
+
+        #nav {
+            width: 100%;
+            place-self: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 16px;
+            background-color: #ffffff;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            max-width: 700px;
+        }
+
+        #nav img {
+            height: 24px;
+            width: auto;
+        }
+
+        header {
+            padding: 7px 32px;
+            border-bottom: solid 1px #dbdbdb;
+        }
+
+        #name {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        #nameo {
+            display: flex;
+            width: 100%;
+            gap: 64px;
+            padding: 12px 0px 12px 0;
+            border: 1px #dbdbdb solid;
+            justify-content: center;
+            width: 350px;
+        }
+
+        #nameo img {
+            height: 32px;
+            width: 24px;
+        }
+
+        .messag {
+            height: 72px;
+            display: grid;
+            grid-template-columns: 56px 1fr;
+            gap: 12px;
+            place-content: center;
+            place-self: center;
+            cursor: pointer;
+        }
+
+        .messag:hover,
+        .active {
+            background-color: #ededed;
+        }
+
+        .messagertext {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            align-self: center;
+            display: none;
+            visibility: hidden;
+        }
+
+        #messa {
+            border: 1px solid #dbdbdb;
+            width: 350px;
+            overflow-y: scroll;
+        }
+
+        .messagerpic {
+            width: 56px;
+            height: 56px;
+            border-radius: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        main {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .messager {
+            font-size: 14px;
+            color: #353635;
+        }
+
+        a[data-tooltip] {
+            position: relative;
+        }
+
+        a[data-tooltip]::before,
+        a[data-tooltip]::after {
+            display: block;
+            position: absolute;
+            opacity: 0;
+            transition: opacity .2s ease-in-out;
+            pointer-events: none;
+        }
+
+        a[data-tooltip]::before:hover,
+        a[data-tooltip]::after:hover {
+            opacity: 1;
+        }
+
+        a[data-tooltip]::after {
+            content: '';
+            border-right: 6px solid transparent;
+            border-top: 6px solid #020402;
+            border-left: 6px solid transparent;
+            height: 0%;
+            width: 0%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        a[data-tooltip]::before {
+            content: attr(data-tooltip);
+            background-color: #020402;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 13px;
+            padding: .5rem 1rem;
+            top: calc(-100% - 18px);
+            white-space: nowrap;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .message {
+            height: 15px;
+            font-size: 14px;
+            color: #8e8e8e;
+            font-weight: 400;
+            overflow: hidden;
+        }
+
+        #mright {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 585px;
+            height: 100%;
+            border: 1px #dbdbdb solid;
+            gap: 28px;
+        }
+
+
+        #mrtext {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        #mrtext h5 {
+            font-size: 22px;
+            font-weight: 350;
+            font-family: poppins;
+        }
+
+        #mrtext h6 {
+            font-size: 14px;
+            color: #8e8e8e;
+            font-weight: 300;
+            font-family: poppins;
+        }
+
+        #mleft {
+            display: grid;
+            grid-template-rows: 61.6px 1fr;
+            height: 100%;
+        }
+
+        #sendMessageBtn {
+            width: fit-content;
+            color: white;
+            padding: 6px 24px;
+            border: none;
+            background-image: linear-gradient(to bottom right, #FB2943, #EDCB96);
+            font-size: 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+    <header>
+        <h1
+            style="font-family: Salsa; background-image: linear-gradient(to right, #FB2943, #EDCB96); width: fit-content; background-clip: text; -webkit-text-fill-color: transparent; font-size: 29px;">
+            Strawberry</h1>
+    </header>
+    <main>
+        <div id="mleft">
+            <div id="nameo">
+                <a href="">
+                    <div id="name">
+                        <h6 style="font-size: 16; font-weight: 600;">king_stephen</h6>
+                        <img src="Images/dropdown.svg" alt="">
+                    </div>
+                </a>
+                <img src="Images/NewMessages.svg" alt="" srcset="">
+            </div>
+            <div id="messa">
+                <div class="messag">
+                    <div class="messagerpic" style="background-image: url(Images/pexels-agneselunecka-20409572.jpg);">
+                    </div>
+                    <div class="messagertext">
+                        <h6 class="messager">trerrylucas</h6>
+                        <h6 class="message">Imperdiet in sit rhoncus, eNNNNNl</h6>
+                    </div>
+                </div>
+                <div class="messag">
+                    <div class="messagerpic" style="background-image: url(Images/pexels-cre8ivengine-9767204.jpg);">
+                    </div>
+                    <div class="messagertext">
+                        <h6 class="messager">trerrylucas</h6>
+                        <h6 class="message">Imperdiet in sit rhoncus, eleifend tellu...</h6>
+                    </div>
+                </div>
+                <div class="messag">
+                    <div class="messagerpic" style="background-image: url(Images/pexels-agneselunecka-20409572.jpg);">
+                    </div>
+                    <div class="messagertext">
+                        <h6 class="messager">trerrylucas</h6>
+                        <h6 class="message">Active 1h ago</h6>
+                    </div>
+                </div>
+                <div class="messag">
+                    <div class="messagerpic" style="background-image: url(Images/pexels-interwebly-27902293.jpg);">
+                    </div>
+                    <div class="messagertext">
+                        <h6 class="messager">trerrylucas</h6>
+                        <h6 class="message">Seen just now</h6>
+                    </div>
+                </div>
+                <div class="messag">
+                    <div class="messagerpic"
+                        style="background-image: url(Images/pexels-lvu-image-1599405908-28570315.jpg);"></div>
+                    <div class="messagertext">
+                        <h6 class="messager">trerrylucas</h6>
+                        <h6 class="message">Sent 1m ago</h6>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="mright">
+            <!-- <div id="mrtext">
+                <img src="Images/Icon.svg" alt="">
+                <h5>Your Messages</h5>
+                <h6>Send private photos and messages to a friend or group.</h6>
+            </div>
+            <button id="sendMessageBtn">Follow</button>
+        </div> -->
+
+    </main>
+    <div id="nav">
+        <a href="" data-tooltip="Home"><img src="Images/Menu-Button-Item.svg" alt="" srcset=""></a>
+        <a href="" data-tooltip="Search"><img src="Images/Group.svg" alt="" srcset=""></a>
+        <a href="" data-tooltip="Messages"><img src="Images/Menu-Button-Item-1.svg" alt="" srcset=""></a>
+        <a href="" data-tooltip="Create Post"><img src="Images/Menu-Button-Item-2.svg" alt="" srcset=""></a>
+        <a href="" data-tooltip="Explore"><img src="Images/Menu-Button-Item-3.svg" alt="" srcset=""></a>
+        <a href="" data-tooltip="Notification"><img src="Images/Menu-Button-Item-4.svg" alt="" srcset=""></a>
+        <a href="">
+            <div style="
+            height: 24px;
+            width: 24px;
+            border-radius: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url(Images/pexels-northern-28283491.jpg);"></div>
+        </a>
+    </div>
+</body>
+
+</html>
