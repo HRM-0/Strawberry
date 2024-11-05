@@ -24,8 +24,6 @@
             place-self: center;
             position: fixed;
             bottom: 0;
-            left: 0;
-            right: 0;
             padding: 16px;
             background-color: #ffffff;
             color: #fff;
@@ -112,6 +110,7 @@
             display: flex;
             justify-content: center;
         }
+
         #prof {
             display: flex;
             flex-direction: column;
@@ -171,18 +170,18 @@
             }
 
             #nav {
-            width: 100%;
-            place-self: center;
-            position: fixed;
-            bottom: 0;
-            padding: 16px;
-            background-color: #ffffff;
-            color: #fff;
-            display: flex;
-            justify-content: space-between;
-            flex-direction: row;
-            max-width: 700px;
-        }
+                width: 100%;
+                place-self: center;
+                position: fixed;
+                bottom: 0;
+                padding: 16px;
+                background-color: #ffffff;
+                color: #fff;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+                max-width: 700px;
+            }
 
             #gallery {
                 display: grid;
@@ -234,6 +233,13 @@
 
             .postno {
                 flex-direction: column;
+            }
+        }
+
+        @media only screen and (max-width: 721px) {
+            #nav img {
+                height: 20px;
+                width: auto;
             }
         }
     </style>

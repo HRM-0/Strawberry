@@ -16,6 +16,12 @@
             color: #353635;
         }
 
+        body {
+            display: grid;
+            align-items: center;
+            background-color: #fafafa;
+        }
+
         main {
             display: grid;
         }
@@ -32,8 +38,6 @@
             place-self: center;
             position: fixed;
             bottom: 0;
-            left: 0;
-            right: 0;
             padding: 16px;
             background-color: #ffffff;
             color: #fff;
@@ -157,6 +161,7 @@
             width: 613px;
             font-size: 15px;
         }
+
         #downloadapp {
             display: flex;
             flex-direction: column;
@@ -164,14 +169,17 @@
             align-self: center;
             align-items: center;
         }
+
         #downloadapp h5 {
             font-size: 18px;
             font-weight: 600;
         }
+
         #downloadapp h6 {
             font-size: 16px;
             font-weight: 400;
         }
+
         #applinks {
             display: flex;
             align-items: center;
@@ -259,6 +267,13 @@
                 flex-direction: column;
             }
         }
+
+        @media only screen and (max-width: 721px) {
+            #nav img {
+                height: 20px;
+                width: auto;
+            }
+        }
     </style>
     <header>
         <h1
@@ -319,7 +334,7 @@
                         <div id="applinks">
                             <a href=""><img src="Images/GooglePlay.svg" alt="" srcset=""></a>
                             <a href=""><img src="Images/AppStore.svg" alt="" srcset=""></a>
-                            
+
                         </div>
 
                     </div>
