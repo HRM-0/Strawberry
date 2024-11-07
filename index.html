@@ -27,23 +27,23 @@
             font-size: 15px;
         }
 
-        header {
+        #header {
             display: flex;
             align-items: center;
             justify-content: space-around;
             padding: 20px 64px;
         }
 
-        header img {
+        #header img {
             width: 45px;
             height: 40px;
         }
 
-        header svg {
+        #header svg {
             display: none;
         }
 
-        header a {
+        #header a {
             text-decoration: none;
             color: #020402;
             font-family: Poppins;
@@ -100,7 +100,7 @@
             margin-top: 20px;
         }
 
-        input {
+        .inputt {
             width: 352px;
             height: 56px;
             border: none;
@@ -110,7 +110,7 @@
             padding-left: 12px;
         }
 
-        button {
+        #submitBtn {
             width: fit-content;
             color: white;
             padding: 16px 48px;
@@ -138,7 +138,7 @@
             margin-top: 24px;
         }
 
-        footer {
+        #footer {
             display: flex;
             align-items: center;
             margin-top: 56px;
@@ -164,11 +164,11 @@
         }
 
         @media only screen and (max-width: 774px) {
-            header svg {
+            #header svg {
                 display: block;
             }
 
-            header nav {
+            #header nav {
                 display: none;
             }
 
@@ -201,7 +201,7 @@
             align-items: center;
         }
     </style>
-    <header>
+    <header id="header">
         <a href=""><img src="Images/2981-removebg-preview.png" alt=""></a>
 
         <nav>
@@ -234,10 +234,10 @@
 
             <form id="input" action="" method="post">
 
-                <input type="text" name="" id="email" placeholder="Email address or phone number ">
+                <input type="text" class="inputt" name="" id="email" placeholder="Email address or phone number ">
                 <p id="errEmail"></p>
 
-                <input type="password" name="" id="password" placeholder="Password">
+                <input type="password" class="inputt" name="" id="password" placeholder="Password">
                 <p id="errPassword"></p>
 
                 <button id="submitBtn" type="submit">Login</button>

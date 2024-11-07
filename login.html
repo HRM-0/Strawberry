@@ -7,7 +7,7 @@
     <title>Login</title>
 </head>
 
-<body>
+<body id="body">
     <style>
         * {
             margin: 0;
@@ -15,18 +15,18 @@
             font-family: figtree;
         }
 
-        body {
+        #body {
             align-items: center;
             display: flex;
             flex-direction: column;
         }
 
-        nav {
+        #vnav {
             margin-top: 32px;
             margin-bottom: 41px;
         }
 
-        nav a {
+        #vnav a {
             text-decoration: none;
             color: #020402;
             font-family: Poppins;
@@ -36,17 +36,12 @@
             justify-content: center;
         }
 
-        nav a:hover {
+        #vnav a:hover {
             text-decoration: underline;
         }
 
-        img {
+        #imgg {
             margin-top: 93px;
-        }
-
-        h1 {
-            font-size: 48px;
-            margin-bottom: 38px;
         }
 
         #errdisplay {
@@ -62,7 +57,7 @@
             align-items: center;
         }
 
-        input {
+        .inputt {
             width: 352px;
             height: 56px;
             border: none;
@@ -72,7 +67,7 @@
             padding-left: 12px;
         }
 
-        button {
+        #submitBtn {
             width: fit-content;
             color: white;
             padding: 16px 48px;
@@ -128,7 +123,7 @@
         }
 
         @media only screen and (max-width: 620px) {
-            nav {
+            #vnav {
                 display: none;
             }
 
@@ -138,23 +133,23 @@
         }
 
         @media only screen and (max-width: 405px) {
-            input {
+            .inputt {
                 width: 281.6px;
                 height: 44.8px;
             }
         }
     </style>
-    <img src="Images\2981-removebg-preview.png" width="auto" height="163px" alt="">
+    <img id="imgg" src="Images\2981-removebg-preview.png" width="auto" height="163px" alt="">
     <h1
-        style="font-family: Salsa; background-image: linear-gradient(to right, #FB2943, #EDCB96); width: fit-content; background-clip: text; -webkit-text-fill-color: transparent;">
+        style="font-size: 48px; margin-bottom: 38px; font-family: Salsa; background-image: linear-gradient(to right, #FB2943, #EDCB96); width: fit-content; background-clip: text; -webkit-text-fill-color: transparent;">
         Strawberry</h1>
     <p id="errdisplay"></p>
     <form id="input" action="" method="post">
 
-        <input type="text" name="" id="email" placeholder="Email address or phone number ">
+        <input type="text" name="" class="inputt" id="email" placeholder="Email address or phone number ">
         <p id="errEmail"></p>
 
-        <input type="password" name="" id="password" placeholder="Password">
+        <input type="password" class="inputt" name="" id="password" placeholder="Password">
         <p id="errPassword"></p>
 
         <button id="submitBtn" type="submit">Login</button>
@@ -162,7 +157,7 @@
         <div id="rm"> <input type="checkbox" name="" id="rememberMe"> <label for="rememberMe">Remember Me</label></div>
 
     </form>
-    <nav>
+    <nav id="vnav">
         <a href="">Features</a>
         <a href="">Destop App</a>
         <a href="">Privacy & Safety</a>
